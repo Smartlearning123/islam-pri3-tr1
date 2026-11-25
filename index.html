@@ -6,9 +6,12 @@
 <meta property="og:locale" content="ar_AR">
 <meta property="og:title" content="هيا نتعلّم ديننا – الصف الثالث الابتدائي">
 <meta property="og:description" content="العب وتعلّم التربية الدينية الإسلامية: العقيدة والقرآن والعبادات والسيرة والقيم">
-<meta property="og:image" content="https://smartlearning123.github.io/Islamic-education/preview.jpg">
+<meta property="og:url" content="https://smartlearning123.github.io/islam-pri3-tr1/">
+<meta property="og:image" content="https://smartlearning123.github.io/islam-pri3-tr1/preview-g3.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="هيا نتعلّم ديننا – الصف الثالث الابتدائي">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>هيا نتعلّم ديننا 🌙</title>
@@ -741,7 +744,7 @@ function play(ui,k){NAVID++;
   A().innerHTML=ord.map(i=>`<button class="opt" data-i="${i}">${r.o[i]}</button>`).join('');
   A().querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(+b.dataset.i===r.a){b.classList.add('ok');A().querySelectorAll('.opt').forEach(x=>x.style.pointerEvents='none');good(nx)}else{b.classList.add('bad');bad()}});
  }else if(r.t==='seq'){
-  let n=0,done='';const me=NAVID,lab=x=>x.replace('،',''),SU=/^سورة/.test(r.q),AI=x=>String(x).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]),vn=(t,fin)=>{if(!SU)return t;let c=0;let o=t.replace(/\s*،/g,()=>' <span class="ay">'+AI(++c)+'</span>');if(fin&&!/،\s*$/.test(t))o+=' <span class="ay">'+AI(c+1)+'</span>';return o};
+  let n=0,done='';const me=NAVID,lab=x=>x.replace('،',''),SU=/^سورة/.test(r.q),AI=x=>String(x).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]),ST=Math.max(1,+((r.q.match(/من الآية ([٠-٩]+)/)||[])[1]||'1').replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d))),vn=(t,fin)=>{if(!SU)return t;let c=ST-1;let o=t.replace(/\s*،/g,()=>' <span class="ay">'+AI(++c)+'</span>');if(fin&&!/،\s*$/.test(t))o+=' <span class="ay">'+AI(c+1)+'</span>';return o};
   const draw=()=>{
    const [pre,ans,wr]=r.st[n],cur=(done+' '+pre).trim();
    shell(ui,k,r.q+(r.bsm?'<i class="bsm"></i>':'')+'<div class="sq">'+(cur?vn(cur)+' ':'')+'<span class="bl">…</span></div>',r.ns?null:(cur||r.q),n>0,n/r.st.length);
